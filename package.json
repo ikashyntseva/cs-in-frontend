@@ -1,0 +1,23 @@
+{
+  "name": "cs-in-frontend",
+  "version": "0.1.0",
+  "description": "Homework for the course Computer Science in Frontend",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikashyntseva/cs-in-frontend.git"
+  },
+  "author": "Iryna Kashyntseva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ikashyntseva/cs-in-frontend/issues"
+  },
+  "homepage": "https://github.com/ikashyntseva/cs-in-frontend#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}

@@ -1,1 +1,1 @@
-# cs-in-frontend
+# Homework for the course Computer Science in Frontend
