@@ -1,1 +1,2 @@
 # Homework for the course Computer Science in Frontend
+- ### [Homework_1](https://github.com/ikashyntseva/cs-in-frontend/tree/master/src/hw_1): Data and data types. Typification in programming languages. Fundamental data structures.
