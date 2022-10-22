@@ -10,4 +10,4 @@ export interface I_LinkedList<T> {
     add(value: T): void
 }
 
-export type I_LinkOrNull<T> = I_Link<T> | null
+export type I_LinkOrNull<T> = I_Link<T> | null;

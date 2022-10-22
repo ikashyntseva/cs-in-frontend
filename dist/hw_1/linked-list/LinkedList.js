@@ -28,5 +28,15 @@ class LinkedList {
             this.#last = newLink;
         }
     }
+    *generateValues(reversed) {
+        let current = !reversed ? this.#first : this.#last;
+        while (current) {
+            yield current.value;
+            current = !reversed ? current.next : current.prev;
+        }
+    }
+    [Symbol.iterator]() {
+        return this.generateValues();
+    }
 }
 exports.default = LinkedList;

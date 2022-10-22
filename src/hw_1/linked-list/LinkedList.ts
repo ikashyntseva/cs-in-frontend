@@ -33,4 +33,17 @@ export default class LinkedList<T> implements I_LinkedList<T> {
       this.#last = newLink;
     }
   }
+
+  *generateValues(reversed?: boolean): Iterator<T> {
+    let current: Link<T> | null = !reversed ? this.#first : this.#last;
+
+    while(current) {
+      yield current.value
+      current = !reversed ? current.next : current.prev
+    }
+  }
+
+  [Symbol.iterator](): Iterator<T> {
+    return this.generateValues()
+  }
 }
