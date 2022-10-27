@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.regExpDeDuplicate = exports.format1 = exports.format = exports.regExpSplit = exports.regExpStr = void 0;
+exports.regExpStr = /[\w$_]/g;
+exports.regExpSplit = /[(\s\.,;]+/g;
+const format = (str, formatter) => str.replaceAll(/\$\{(\w+)\}/g, (...args) => formatter[args[1] || '']);
+exports.format = format;
+const format1 = (str, formatter) => Object.entries(formatter).reduce((res, [key, value]) => res.replaceAll(`\$\{${key}\}`, value), str);
+exports.format1 = format1;
+exports.regExpDeDuplicate = /([\s\S]{1,3}?)\1+/g;
