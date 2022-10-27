@@ -13,6 +13,10 @@ export default class LinkedList<T> implements I_LinkedList<T> {
     return this.#last;
   }
 
+  get isEmpty(): boolean {
+    return false;
+  }
+
   set first(link: Link<T> | null) {
     this.#first = link;
   }
@@ -34,16 +38,20 @@ export default class LinkedList<T> implements I_LinkedList<T> {
     }
   }
 
+  delete() {
+    this.#first = this.#first?.next ?? null;
+  }
+
   *generateValues(reversed?: boolean): Iterator<T> {
     let current: Link<T> | null = !reversed ? this.#first : this.#last;
 
-    while(current) {
-      yield current.value
-      current = !reversed ? current.next : current.prev
+    while (current) {
+      yield current.value;
+      current = !reversed ? current.next : current.prev;
     }
   }
 
   [Symbol.iterator](): Iterator<T> {
-    return this.generateValues()
+    return this.generateValues();
   }
 }

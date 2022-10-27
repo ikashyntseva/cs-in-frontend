@@ -10,6 +10,9 @@ class LinkedList {
     get last() {
         return this.#last;
     }
+    get isEmpty() {
+        return false;
+    }
     set first(link) {
         this.#first = link;
     }
@@ -27,6 +30,9 @@ class LinkedList {
             this.#first = newLink;
             this.#last = newLink;
         }
+    }
+    delete() {
+        this.#first = this.#first?.next ?? null;
     }
     *generateValues(reversed) {
         let current = !reversed ? this.#first : this.#last;
