@@ -10,21 +10,15 @@ export const format = (
   formatter: {
     [key: string]: any;
   }
-): string => str.replaceAll(/\$\{(\w+)\}/g, (...args) => formatter[args[1] || '']);
-
-export const format1 = (
-  str: string,
-  formatter: {
-    [key: string]: any;
-  }
 ): string =>
-  Object.entries(formatter).reduce(
-    (res, [key, value]) => res.replaceAll(`\$\{${key}\}`, value),
-    str
-  );
+  str.replaceAll(/\$\{(\w+)\}/g, (...args) => formatter[args[1] || ""]);
 
 // 4. Необходимо написать регулярное выражение, которое бы удаляла из строки любые дублирования подстрок из 1-го, 2-х или 3-х символов, которые идут подряд
 
 export const regExpDeDuplicate = /([\s\S]{1,3}?)\1+/g;
 
 // 5. Нахождение арифметических операций в строке и замена на результат
+export const calc = (str:string) => {
+  const regExpMath = /[\d(]+[ \d\-+()*\/]+[\d)]+/g
+  return str.replace(regExpMath, s => eval(s))
+}
