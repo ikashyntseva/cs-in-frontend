@@ -1,1 +1,2 @@
 # Homework for the course Computer Science in Frontend
+- ### [Homework_3: The most important data structures: vector, hash tables, search trees.](https://github.com/ikashyntseva/cs-in-frontend/tree/master/src/hw_3)
